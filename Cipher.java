@@ -75,3 +75,45 @@ class Caesar extends Cipher {
         return character;
     }
 }
+
+class Transpose extends Cipher {
+    public Transpose(String text) {
+        super(text);
+    }
+
+    @Override
+    public String encode(String s) {
+        StringBuilder result = new StringBuilder();
+        String[] words = s.split(" ");
+        for (String word : words) {
+            StringBuilder reversedWord = new StringBuilder(word).reverse();
+            result.append(reversedWord).append(" ");
+        }
+        return result.toString().trim();
+    }
+
+    @Override
+    public String decode(String s) {
+        // Decoding for Transpose is the same as encoding since it's a simple reversal
+        return encode(s);
+    }
+}
+
+class Reverser extends Cipher {
+    public Reverser(String text) {
+        super(text);
+    }
+
+    @Override
+    public String encode(String s) {
+        // Reverse the entire string
+        return new StringBuilder(s).reverse().toString();
+    }
+
+    @Override
+    public String decode(String s) {
+        // Decoding for Reverser is the same as encoding since it's a double reversal
+        return encode(s);
+    }
+}
+
