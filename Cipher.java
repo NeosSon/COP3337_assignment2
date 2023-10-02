@@ -1,3 +1,10 @@
+//Assignment 2
+//COP3337
+//Gustavo Pena
+//Shelly Penichet
+
+
+
 // dif stand for difference
 interface Constants {
     int wrap = 26;
